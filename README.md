@@ -36,7 +36,7 @@ Para executar o projeto, é necessário ter os seguintes requisitos instalados e
 $ git clone https://github.com/mewmewdevart/windows95.git
 
 # Entre dentro da pasta clonada e do projeto
-$ cd windows98/windows95/
+$ cd windows95
 ```
 
 **1. Instale as dependencias**
