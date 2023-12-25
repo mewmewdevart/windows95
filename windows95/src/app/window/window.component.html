@@ -1,0 +1,33 @@
+<div class="container-fluid">
+	<div class="container">
+		<div class="window" id="mydiv" *ngFor="let window of communicationService.iconsDesktop" [style.display]="window.isWindowOpen === 'yes' ? 'block' : 'none'" appDraggable>
+			<header>
+				<div class="browser-tab row align-items-center">
+					<div class="col-6 col-md-4 left-window">
+						<img src="{{window.path}}" alt="{{window.name}}" class="img-fluid">
+						<p>{{window.name}}</p>
+					</div>
+					<div class="col-6 col-md-8 text-end right-window turnCursor">
+						<img src="../../assets/icons_new/icon_i.png" class="img-fluid" (click)="communicationService.minimizeWindow(window)">
+						<img src="../../assets/icons_new/icon_op.png" class="img-fluid">
+						<img src="../../assets/icons_new/icon_x.png" class="img-fluid" (click)="communicationService.closeWindow(window)">
+					</div>
+				</div>
+				<ul class="nav">
+					<li class="nav-item">Edit</li>
+					<li class="nav-item">View</li>
+					<li class="nav-item">Help</li>
+				</ul>
+				<hr>
+			</header>
+			<div class="content">
+
+				<div class="bottom">
+					<div class="left-bottom"></div>
+					<div class="right-bottom "></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

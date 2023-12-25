@@ -1,0 +1,37 @@
+@import '../../styles'
+
+.icons-desktop
+	position: absolute
+	display: flex
+	justify-content: left
+	gap: 10px
+	min-height: 88vh
+
+.column
+	display: flex
+	flex-direction: column
+	gap: 10px
+	padding: 10px
+
+.dragging
+	opacity: 0.5
+
+.icon
+	display: flex
+	width: 130px
+	flex-direction: column
+	align-items: center
+	padding-top: 15px
+	img
+		width: 54px
+		height: 54px
+	h1
+		color: $colorMono100
+		text-align: center
+		font-weight: 500
+		font-family: $fontPrincipal
+		font-size: $fontSizeMedium
+	&:hover
+		background-color: $colorBlue50
+		cursor: pointer
+		opacity: 0.8

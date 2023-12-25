@@ -1,0 +1,176 @@
+@import '../../styles'
+
+footer
+	display: flex
+	justify-content: space-between
+	align-items: center
+	background-color: $colorMono100
+	height: 68px
+	position: fixed
+	left: 0
+	bottom: 0
+	font-family: $fontPrincipal
+	width: 100%
+	box-shadow: 2px 2px 0px 0px #F0F0F0 inset
+	z-index: 6
+	.left-position-bar
+		display: flex
+		align-content: flex-start
+		.footerBar-btn
+			font-family: $fontPrincipal
+			background-color: $colorMono100
+			border-radius: 0
+			border: 0 2px 2px 0 solid #262626
+			box-shadow: 4px 4px 0px 0px #B1B1B1 inset, -4px -4px 0px 0px #7E7E7E inset, 2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset
+			display: flex
+			width: 120px
+			height: 50px
+			padding: 9px 22px 9px 8px
+			align-items: center
+			margin-left: 8px
+			font-size: $fontSizeMedium
+			&:hover
+				background-color: $colorMono50
+				border: 0 2px 2px 0 solid $colorMono50
+				box-shadow: -4px -4px 0px 0px #B1B1B1 inset, 4px 4px 0px 0px #7E7E7E inset, -2px -2px 0px 0px #F0F0F0 inset, 2px 2px 0px 0px #262626 inset
+			.button-content
+				display: flex
+				align-items: center
+				gap: 7px
+				padding-left: 10px
+		.taskBar-window
+			background-color: $colorMono100
+			border: 0 2px 2px 0 solid #262626
+			border-radius: 0
+			box-shadow: 4px 4px 0px 0px #B1B1B1 inset, -4px -4px 0px 0px #7E7E7E inset, 2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset
+			display: none
+			width: 270px
+			height: 50px
+			padding: 9px 22px 9px 8px
+			align-items: center
+			margin-left: 8px
+			margin-top: 1px
+			font-size: $fontSizeMedium
+			&:hover
+				background-color: $colorMono50
+				border: 0 2px 2px 0 solid$colorMono50
+				box-shadow: -4px -4px 0px 0px #B1B1B1 inset, 4px 4px 0px 0px #7E7E7E inset, -2px -2px 0px 0px #F0F0F0 inset, 2px 2px 0px 0px #262626 inset
+			.button-content
+				display: flex
+				align-items: center
+				gap: 7px
+				padding-left: 10px
+				img
+					width: 32px
+					height: 32px
+				p
+					padding-top: 12px
+
+	.footerClock-btn
+		background-color: $colorMono100
+		margin-right: 8px
+		display: flex
+		padding: 7px
+		justify-content: flex-end
+		align-items: center
+		font-family: $fontPrincipal
+		gap: 10px
+		border: none
+		box-shadow: 2px 2px 0px 0px #7E7E7E inset, -2px -2px 0px 0px #F0F0F0 inset
+		img
+			width: 32px
+			height: 32px
+			justify-content: center
+			align-items: center
+		div
+			font-size: $fontSizeMedium
+
+.footerBarHorizontal-btn
+	font-family: $fontPrincipal
+	background-color: $colorMono100
+	border-radius: 0
+	border: 0 2px 2px 0 solid #262626
+	box-shadow: 4px 4px 0px 0px #B1B1B1 inset, -4px -4px 0px 0px #7E7E7E inset, 2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset
+	display: flex
+	width: 200px
+	height: 50px
+	padding: 9px 12px
+	align-items: center
+	margin-left: 8px
+	font-size: calc($fontSizeMedium - 3px)
+	.button-content
+		display: flex
+		align-items: center
+	span
+		margin-left: 5px
+	img
+		width: 32px
+		height: 32px
+		justify-content: center
+		align-items: center
+	&:hover
+		box-shadow: -4px -4px 0px 0px #B1B1B1 inset, 4px 4px 0px 0px #7E7E7E inset, -2px -2px 0px 0px #F0F0F0 inset, 2px 2px 0px 0px #262626 inset
+
+.mat-mdc-menu-item
+	background-color: $colorMono100
+	display: flex
+	align-items: center
+	border: none
+	border-radius: 0 !important
+	width: 250px
+	margin: 0 !important
+	padding: 5px 5px 0px 5px
+	list-style-type: none
+	box-shadow: none
+	&:hover
+		background-color: $colorBlue100
+	&:focus
+		outline: none
+		font-family: $fontPrincipal
+	img
+		display: inline-block
+		width: 46px
+		height: 46px
+	p
+		position: absolute
+		display: inline-block
+		color: $colorMonoBlack
+		padding-left: 14px
+		top: -5px
+		font-size: $fontSizeMedium
+		font-family: $fontPrincipal
+	.icon-svg
+		position: absolute
+		width: 16px
+		height: 16px
+		top: 20px
+		right: 10px
+
+.line
+	background-color: $colorMono300
+	width: 100%
+	height: 2px
+	border-bottom: 2px solid white
+
+::ng-deep .mat-mdc-menu-content, mat-menu
+	padding: 0 !important
+	border: none !important
+	border-radius: 0 !important
+
+
+.hiddenItem
+	img
+		width: 32px
+		height: 32px
+	p
+		position: absolute
+		top: -10px
+
+.mat-mdc-menu-item-highlighted
+	background-color: red
+
+.mat-mdc-menu-item:not([disabled]).cdk-program-focused, .mat-mdc-menu-item:not([disabled]).cdk-keyboard-focused, .mat-mdc-menu-item:not([disabled]).mat-mdc-menu-item-highlighted, .mat-mdc-menu-item:not([disabled]):hover
+	background-color: $colorBlue100
+	p
+		color: $colorMonoWhite
+	--mat-menu-item-icon-color: white

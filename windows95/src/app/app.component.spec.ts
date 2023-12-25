@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
-  });
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [RouterTestingModule],
+    declarations: [AppComponent]
+  }));
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'windows95' title`, () => {
+  it(`should have as title 'windows98'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('windows95');
+    expect(app.title).toEqual('windows98');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, windows95');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('windows98 app is running!');
   });
 });
