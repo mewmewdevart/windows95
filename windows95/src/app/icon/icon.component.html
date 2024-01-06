@@ -1,10 +1,9 @@
-<div class="container-fluid">
+<div class="container-fluid drag-drop">
 	<div class="icons-desktop">
-		<div class="column">
-			<div class="icon" draggable="true" *ngFor="let icon of communicationService.iconsDesktop; let i = index" (click)="communicationService.openWindow(i)">
-				<img src="{{icon.path}}" alt="{{icon.name}}">
-				<h1>{{icon.name}}</h1>
-			</div>
+		<div class="icon" cdkDragBoundary=".icons-desktop" *ngFor="let icon of communicationService.iconsDesktop; let i = index" 
+				 cdkDrag (click)="handleIconClick(i)">
+			<img src="{{icon.path}}" alt="{{icon.name}}">
+			<h1>{{icon.name}}</h1>
 		</div>
 	</div>
 </div>

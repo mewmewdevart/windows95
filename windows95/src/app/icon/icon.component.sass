@@ -1,37 +1,45 @@
 @import '../../styles'
 
+.drag-drop
+	background-color: yellow
+
 .icons-desktop
+	top: 0
+	min-width: 99vw
+	min-height: 90vh
 	position: absolute
 	display: flex
+	flex-direction: column
 	justify-content: left
 	gap: 10px
-	min-height: 88vh
 
-.column
-	display: flex
-	flex-direction: column
-	gap: 10px
-	padding: 10px
+	.icon 
+		display: flex
+		width: 130px
+		flex-direction: column
+		align-items: center
+		padding-top: 17px
+		img
+			width: 54px
+			height: 54px
+		h1
+			color: $colorMono100
+			text-align: center
+			font-weight: 500
+			font-family: $fontPrincipal
+			font-size: $fontSizeMedium
+		&:hover, &:focus
+			background-color: $colorBlue50
+			cursor: pointer
+			opacity: 0.8
+			
+		&.dragging
+			opacity: 0.5
+			z-index: 1000
 
-.dragging
-	opacity: 0.5
+			img
+				border: 4px solid transparent
 
-.icon
-	display: flex
-	width: 130px
-	flex-direction: column
-	align-items: center
-	padding-top: 15px
-	img
-		width: 54px
-		height: 54px
-	h1
-		color: $colorMono100
-		text-align: center
-		font-weight: 500
-		font-family: $fontPrincipal
-		font-size: $fontSizeMedium
-	&:hover
-		background-color: $colorBlue50
-		cursor: pointer
-		opacity: 0.8
+		&.cdk-drag-placeholder
+			opacity: 0
+			background-color: transparent

@@ -11,6 +11,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { MenuComponent } from './menu/menu.component';
 import { WindowComponent } from './window/window.component';
 import { IconComponent } from './icon/icon.component';
 import { DraggableDirective } from './window/draggable.directive';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
 	declarations: [
@@ -25,7 +28,8 @@ import { DraggableDirective } from './window/draggable.directive';
 		MenuComponent,
 		WindowComponent,
   		IconComponent,
-		DraggableDirective
+		DraggableDirective,
+  EventsComponent
 	],
 	imports: [
 		BrowserModule,
@@ -40,7 +44,8 @@ import { DraggableDirective } from './window/draggable.directive';
 		MatSelectModule,
 		MatSidenavModule,
 		MatGridListModule,
-		MatCardModule
+		MatCardModule,
+		DragDropModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

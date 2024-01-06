@@ -39,7 +39,4 @@ export class MenuComponent {
 
 		this.timeString = `${formattedHours}:${formattedMinutes} ${formatHourClock}`;
 	}
-
-	
-
 }

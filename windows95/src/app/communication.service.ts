@@ -29,7 +29,7 @@ export class CommunicationService {
 		{
 			name: 'Internet',
 			path: '../../assets/icons_new/icon_internet.png',
-			isWindowOpen: 'no', // yes, no or maybe
+			isWindowOpen: 'yes', // yes, no or maybe
 		},
 		{
 			name: 'My Computer',
