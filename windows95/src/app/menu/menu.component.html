@@ -1,39 +1,42 @@
 <footer>
+	<!-- Start Button -->
 	<div class="left-position-bar">
 		<button mat-button [matMenuTriggerFor]="menu" class="footerBar-btn">
 			<div class="button-content">
-			<img src="../../assets/icons/png/windows-0.png" alt="windows 98 logo">
+				<img src="../../assets/icons/png/windows-0.png" alt="Windows 98 logo">
 				<span class="start-text">Start</span>
 			</div>
 		</button>
-		
-		<!-- && calcBarsOpened < displayLimit ? 'block' : 'none'" -->
+
+		<!-- && calcBarsOpened < displayLimit ? 'block' : 'none' -->
+		<!-- Iterate over desktop icons to create buttons -->
 		<button mat-button class="footerBarHorizontal-btn" *ngFor="let window of communicationService.iconsDesktop; let calcBarsOpened = index"
-        	[style.display]="(window.isWindowOpen === 'yes' || window.isWindowOpen === 'maybe')  ? 'block' : 'none'"
-        	(click)="communicationService.openAgainWindow(window)">
+			[style.display]="(window.isWindowOpen === 'yes' || window.isWindowOpen === 'maybe') ? 'block' : 'none'"
+			(click)="communicationService.openAgainWindow(window)">
 			<div class="button-content">
-				<img src="{{window.path}}" alt="icon {{window.name}}">
-				<span> {{ window.name }}</span>
+				<img src="{{window.path}}" alt="Icon {{window.name}}">
+				<span>{{ window.name }}</span>
 			</div>
 		</button>
 	</div>
 
-	<!-- continued part of mat-button ^ -->
+	<!-- Start Menu -->
 	<mat-menu #menu="matMenu">
 		<ng-container *ngFor="let icons of communicationService.programsOfMenu">
-
+			<!-- Separate handling for 'Programs' button -->
 			<button mat-menu-item *ngIf="icons.name === 'Programs'" [matMenuTriggerFor]="programs">
-			  <img src="{{ icons.icon }}" alt="icon {{ icons.name }}">
-			  <p>{{ icons.name }}</p>
+				<img src="{{ icons.icon }}" alt="Icon {{ icons.name }}">
+				<p>{{ icons.name }}</p>
 			</button>
-		  
 
+			<!-- Other menu items -->
 			<button mat-menu-item *ngIf="icons.name !== 'Programs'">
-			  <img src="{{ icons.icon }}" alt="icon {{ icons.name }}">
-			  <p>{{ icons.name }}</p>
+				<img src="{{ icons.icon }}" alt="Icon {{ icons.name }}">
+				<p>{{ icons.name }}</p>
 			</button>
-		  </ng-container>
-		  
+		</ng-container>
+
+		<!-- Programs menu -->
 		<mat-menu #programs="matMenu" class="hiddenMenu">
 			<button mat-menu-item class="hiddenItem" [matMenuTriggerFor]="accessories">
 				<img src="../../assets/icons_new/icon_programs.png" alt="Calculator icon">
@@ -57,7 +60,7 @@
 			</button>			
 		</mat-menu>
 
-		<!-- If programs true, call toolbar of menu-programs -->
+		<!-- Accessories menu -->
 		<mat-menu #accessories="matMenu" class="hiddenMenu">
 			<button mat-menu-item class="hiddenItem">
 				<img src="../../assets/icons_new/icon_calculator.png" alt="Calculator icon">
@@ -75,14 +78,16 @@
 
 		<div class="line"></div>
 
+		<!-- Shutdown button -->
 		<button mat-menu-item>
-			<img src="../../assets/icons_new/icon_shut.png" alt="icon shutdown">
+			<img src="../../assets/icons_new/icon_shut.png" alt="Icon shutdown">
 			<p>Shut Down</p>
 		</button>
 	</mat-menu>
-	  
+
+	<!-- Clock and Sound Button -->
 	<button class="footerClock-btn lright">
-		<img src="../../assets/icons_new/icon_sound.svg" alt="icon clock">
+		<img src="../../assets/icons_new/icon_sound.svg" alt="Icon clock">
 		<div id="clock">{{ timeString }}</div>
 	</button>
 </footer>
